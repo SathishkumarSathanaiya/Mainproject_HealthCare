@@ -87,5 +87,9 @@ namespace Mainproject_HealthCare.Controllers
         {
             return View();
         }
+        public IActionResult Checks()
+        {
+            return View();
+        }
     }
 }
