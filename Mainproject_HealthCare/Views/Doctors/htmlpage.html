@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Knockout.js Button Click and Pop-up Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Button Click and Pop-up Example</h2>
+
+    <button data-bind="click: showPopup">Click me!</button>
+
+    <div class="overlay" data-bind="visible: isPopupVisible">
+        <div class="popup">
+            <h3>Pop-up Content</h3>
+            <p>This is the content of the pop-up.</p>
+            <button data-bind="click: hidePopup">Close</button>
+        </div>
+    </div>
+
+    <script>
+    function ButtonViewModel() {
+      var self = this;
+
+      self.isPopupVisible = ko.observable(false);
+
+      self.showPopup = function() {
+        self.isPopupVisible(true);
+      };
+
+      self.hidePopup = function() {
+        self.isPopupVisible(false);
+      };
+    }
+
+    var viewModel = new ButtonViewModel();
+    ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

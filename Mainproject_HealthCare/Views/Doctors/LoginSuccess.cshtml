@@ -1,0 +1,46 @@
+﻿@model List<Mainproject_HealthCare.Models.Patient>
+
+@{
+    ViewData["Title"] = "Patient Details";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Problem</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>Action</th>
+           @*// <th>Phone Number</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.Patient_Name</td>
+                <td>@patient.Age</td>
+                <td>@patient.Gender</td>
+                <td>@patient.Problem</td>
+                <td>@patient.Email</td>
+                <td>@patient.PhoneNumber</td>
+                <td>
+                    <form method="post" asp-controller="Prescriptions" asp-action="Create">
+                        <button type="submit" class="btn btn-primary">Check</button>
+                    </form>
+                   
+                </td>
+              @*  <td>@patient.Phone_Number</td>*@
+            </tr>
+
+
+        }
+
+        <form method="post" asp-controller="Doctors" asp-action="Logout">
+            <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+    </tbody>
+</table>

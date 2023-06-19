@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "LoginSuccess";
+}
+
+<h1>LoginSuccess</h1>
+
+<p><a href="~/patients/Create" class="btn btn-primary btn-md">Patient Enrollment &raquo;</a></p>
+<p><a href="~/patients/Index" class="btn btn-primary btn-md">Patient Details &raquo;</a></p>
+<p><a href="~/Prescriptions/ReceptionIndex" class="btn btn-primary btn-md">patient Prescription &raquo;</a></p>
+
+<form method="post" asp-controller="Reception" asp-action="Logout">
+    <button type="submit" class="btn btn-primary">Logout</button>
+</form>

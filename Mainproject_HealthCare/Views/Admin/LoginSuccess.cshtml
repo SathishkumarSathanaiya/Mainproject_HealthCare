@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Admin LoginSuccess";
+}
+
+<h1>Admin LoginSuccess</h1>
+
+
+
+
+
+<p><a href="~/Doctors/Create" class="btn btn-primary btn-md">Doctor Registration &raquo;</a></p>
+
+<p><a href="~/Doctors/Index" class="btn btn-primary btn-md">Doctor Details &raquo;</a></p>
+
+<p><a href="~/Patients/Index" class="btn btn-primary btn-md">patient details &raquo;</a></p>
+
+
+
+
+<form method="post" asp-controller="Admin" asp-action="Logout">
+    <button type="submit" class="btn btn-primary">Logout</button>
+</form>
